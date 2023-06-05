@@ -1,14 +1,43 @@
 import { Card, Form, Button, Alert } from 'react-bootstrap';
-
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 // import { Link } from 'react-router-dom';
 
 const SignUp = () => {
+  const [nombre, setNombre] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [repetirPassword, setRepetirPassword] = useState('');
+
   const {
     register,
-    // handleSubmit,
+    handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const onSubmit = async (datos) => {
+    const { email, nombre, password, repetirPassword } = datos;
+    const datosNuevos = { email, nombre, password };
+
+    try {
+      const resp = await fetch('http://localhost:3004/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(datosNuevos),
+      });
+      const result = await resp.json();
+
+      setEmail('');
+      setNombre('');
+      setPassword('');
+      setRepetirPassword('');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <Card className="container-wrapper">
@@ -17,7 +46,7 @@ const SignUp = () => {
             Únite hoy mismo a Bark
           </Card.Title>
 
-          <Form>
+          <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-4" controlId="emailUsuario">
               <Form.Label className="fw-bold">Email:</Form.Label>
               <Form.Control
@@ -27,6 +56,8 @@ const SignUp = () => {
                 })}
                 type="text"
                 placeholder="Ingrese un email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               {errors.email && (
                 <Alert variant="danger" className="py-2 my-2">
@@ -44,6 +75,8 @@ const SignUp = () => {
                 })}
                 type="text"
                 placeholder="Ingrese un nombre"
+                value={nombre}
+                onChange={(e) => setNombre(e.target.value)}
               />
               {errors.nombre && (
                 <Alert variant="danger" className="py-2 my-2">
@@ -61,6 +94,8 @@ const SignUp = () => {
                 })}
                 type="text"
                 placeholder="Ingrese un password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               {errors.password && (
                 <Alert variant="danger" className="py-2 my-2">
@@ -69,7 +104,7 @@ const SignUp = () => {
               )}
             </Form.Group>
 
-            <Form.Group className="mb-4" controlId="emailUsuario">
+            <Form.Group className="mb-4" controlId="repetirPasswordUsuario">
               <Form.Label className="fw-bold">Repetir Password:</Form.Label>
               <Form.Control
                 aria-label="Ingrese el password nuevamente:"
@@ -78,6 +113,8 @@ const SignUp = () => {
                 })}
                 type="text"
                 placeholder="Ingrese el password nuevamente"
+                value={repetirPassword}
+                onChange={(e) => setRepetirPassword(e.target.value)}
               />
               {errors.repetirPassword && (
                 <Alert variant="danger" className="py-2 my-2">

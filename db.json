@@ -5,7 +5,7 @@
       "_creator": {
         "_id": "2",
         "name": "gerardo",
-        "userName": "test",
+        "email": "correo@correo.com",
         "avatar": ""
       },
       "date": "2023-06-01T06:15:02.341Z",
@@ -27,6 +27,20 @@
       "likeCounter": 0,
       "replys": 0,
       "image": null
+    }
+  ],
+  "users": [
+    {
+      "email": "correo@correo.com",
+      "nombre": "gerardo",
+      "password": "1234",
+      "id": 1
+    },
+    {
+      "email": "test@test.com",
+      "nombre": "test",
+      "password": "1234",
+      "id": 2
     }
   ]
 }
