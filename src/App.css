@@ -12,6 +12,11 @@
   flex-grow: 1;
 }
 
+.container-wrapper {
+  max-width: 500px; /* Define el ancho máximo deseado */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
 /* img {
   max-width: 250px;
 } */
