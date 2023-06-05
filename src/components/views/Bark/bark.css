@@ -1,0 +1,129 @@
+/** BARK COMPONENT **/
+
+.bark {
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #e6ecf0;
+}
+
+.bark .bark-link {
+  position: absolute;
+  display: block;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+.bark:hover {
+  background-color: #f5f8fa;
+  cursor: pointer;
+}
+
+.bark.detail {
+  border-top: none;
+}
+
+.bark.detail:hover {
+  background-color: #fff;
+  cursor: default;
+}
+
+.bark .bark-img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.bark .bark-avatar {
+  border: 1px solid #333;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  /*left: 25px;*/
+  border-radius: 5px;
+  text-align: center;
+}
+
+.bark .bark-body {
+  margin-left: 55px;
+}
+
+.bark .bark-body .bark-name {
+  color: #333;
+}
+
+.bark .bark-body .bark-name {
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-right: 10px;
+  z-index: 10000;
+}
+
+.bark .bark-body .bark-name:hover {
+  text-decoration: underline;
+}
+
+.bark .bark-body .bark-username {
+  text-transform: lowercase;
+  color: #999;
+}
+
+.bark.detail .bark-body .bark-user {
+  margin-left: 70px;
+}
+
+.bark.detail .bark-body {
+  margin-left: 0px;
+}
+
+.bark.detail .bark-body .bark-name {
+  font-size: 18px;
+}
+
+.bark-detail-responses .bark.detail .bark-body .bark-message {
+  font-size: 16px;
+}
+
+.bark.detail .bark-body .bark-username {
+  display: block;
+  font-size: 16px;
+}
+
+.bark.detail .bark-message {
+  position: relative;
+  display: block;
+  margin-top: 25px;
+  font-size: 26px;
+  left: 0px;
+}
+
+.reply-icon,
+.like-icon {
+  color: #999;
+  transition: 0.5s;
+  padding-right: 40px;
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 99999;
+}
+
+.like-icon:hover {
+  color: #e2264d;
+}
+
+.like-icon.liked {
+  color: #e2264d;
+}
+
+.reply-icon:hover {
+  color: #1da1f2;
+}
+
+.like-icon i {
+  color: inherit;
+}
+
+.reply-icon i {
+  color: inherit;
+}

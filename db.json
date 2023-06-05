@@ -1,0 +1,32 @@
+{
+  "barks": [
+    {
+      "_id": "1",
+      "_creator": {
+        "_id": "2",
+        "name": "gerardo",
+        "userName": "test",
+        "avatar": ""
+      },
+      "date": "2023-06-01T06:15:02.341Z",
+      "message": "Este es una prueba\n",
+      "likeCounter": 0,
+      "replys": 0,
+      "image": null
+    },
+    {
+      "_id": "2",
+      "_creator": {
+        "_id": "2",
+        "name": "gerardo",
+        "userName": "test",
+        "avatar": ""
+      },
+      "date": "2023-06-01T06:15:02.341Z",
+      "message": "SEGUNDO BARK\n",
+      "likeCounter": 0,
+      "replys": 0,
+      "image": null
+    }
+  ]
+}
